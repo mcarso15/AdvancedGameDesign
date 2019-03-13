@@ -14,6 +14,9 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rigidBody;
     private Vector3 rotation = Vector3.zero;
 
+    private float jumpHeight = 0f;
+    private float fallMultiplier = 0f;
+
     float minView = 270f;
     float maxView = 90f;
 
@@ -33,9 +36,20 @@ public class PlayerMovement : MonoBehaviour
         camRotation = _camRotate;
     }
 
+    public void Jump(float _jumpHeight){
+        jumpHeight = _jumpHeight;
+    }
+
+    public void FallMulti(float _fallMultiplier){
+        fallMultiplier = _fallMultiplier;
+    }
+
     void FixedUpdate(){
         DoMovement();
         DoRotate();
+        if(rigidBody.velocity.y < 1){
+            rigidBody.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.fixedDeltaTime;
+        }
     }
 
     void DoMovement(){
@@ -49,5 +63,10 @@ public class PlayerMovement : MonoBehaviour
         if(cam != null){
             cam.transform.Rotate(-camRotation); //Inverted camera control if this is positive
         }
+    }
+
+    public void DoJump(){
+        rigidBody.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
+        
     }
 }

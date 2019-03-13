@@ -5,10 +5,14 @@ using UnityEngine;
 public class CharacterController : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;
+    [SerializeField] private float jumpHeight = 5f;
     [SerializeField] private float mouseHorizSens = 6f;
     [SerializeField] private float mouseVertSens = 8f;
+    [SerializeField] private float fallMultiplier = 2f;
 
     private Camera cam;
+
+    private bool grounded;
 
  
     
@@ -42,5 +46,25 @@ public class CharacterController : MonoBehaviour
         Vector3 camRotation = new Vector3(xRotation, 0f, 0f)* mouseVertSens;
 
         movement.CamRotate(camRotation);
+
+        if(grounded){
+            if(Input.GetButtonDown("Jump")){
+                movement.Jump(jumpHeight);
+                movement.FallMulti(fallMultiplier);
+                movement.DoJump();
+            }
+        }
+    }
+
+    void OnCollisionEnter(Collision other){
+        if(other.gameObject.tag == "Ground"){
+            grounded = true;
+        }
+    }
+
+    void OnCollisionExit(Collision other){
+        if(other.gameObject.tag == "Ground"){
+            grounded = false;
+        }
     }
 }
