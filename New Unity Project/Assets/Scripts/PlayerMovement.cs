@@ -47,9 +47,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate(){
         DoMovement();
         DoRotate();
-        if(rigidBody.velocity.y < 1){
-            rigidBody.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.fixedDeltaTime;
-        }
+        DoFall();
     }
 
     void DoMovement(){
@@ -65,6 +63,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    void DoFall(){
+        if(rigidBody.velocity.y < 1){
+            rigidBody.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.fixedDeltaTime;
+        }
+    }
+
+
+    //Public until I find a better way to do this.
     public void DoJump(){
         rigidBody.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
         

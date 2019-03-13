@@ -24,6 +24,10 @@ public class CharacterController : MonoBehaviour
     }
 
     void Update(){
+        DoMovement();
+    }
+
+    void DoMovement(){
         float xMovement = Input.GetAxisRaw("Horizontal"); //-1 to 1
         float zMovement = Input.GetAxisRaw("Vertical"); //-1 to 1
 
