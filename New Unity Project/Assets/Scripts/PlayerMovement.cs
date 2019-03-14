@@ -17,8 +17,11 @@ public class PlayerMovement : MonoBehaviour
     private float jumpHeight = 0f;
     private float fallMultiplier = 0f;
 
-    float minView = 270f;
-    float maxView = 90f;
+    private bool canMove = true;
+
+
+    //float minView = 270f;
+    //float maxView = 90f;
 
     void Start(){
         rigidBody = GetComponent<Rigidbody>();
@@ -51,16 +54,25 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void DoMovement(){
+        //canMove check keeps collisions from sending the player off into space
         if(velocity != Vector3.zero){
+            canMove = true;
+        }
+        if(canMove){
             rigidBody.MovePosition(transform.position + velocity * Time.fixedDeltaTime);
         }
+        canMove = false;        
     }
 
     void DoRotate(){
+        //freezing rotation when not intentionally rotating keeps collisions from turning the player into a ballerina
+        rigidBody.freezeRotation = false;
         rigidBody.MoveRotation(transform.rotation * Quaternion.Euler(rotation));
+        
         if(cam != null){
             cam.transform.Rotate(-camRotation); //Inverted camera control if this is positive
         }
+        rigidBody.freezeRotation = true;
     }
 
     void DoFall(){
@@ -73,6 +85,5 @@ public class PlayerMovement : MonoBehaviour
     //Public until I find a better way to do this.
     public void DoJump(){
         rigidBody.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
-        
     }
 }

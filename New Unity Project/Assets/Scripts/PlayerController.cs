@@ -13,13 +13,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float damageMultiplier = 0.1f;
 
     
+
+    
     private float healthWidth;
     private float currHealthWidth;
-    private float currHealth;
     private float damageValue;
     private Camera cam;
 
-    private bool grounded;
+    private bool grounded = true;
 
     GameObject healthBar;
 
@@ -41,6 +42,7 @@ public class PlayerController : MonoBehaviour
 
     void Update(){
         DoMovement();
+        
 
         TestHealth();
     }
@@ -83,7 +85,13 @@ public class PlayerController : MonoBehaviour
             grounded = true;
         }
 
+        if(other.gameObject.tag == "Wall"){
+            movement.Move(Vector3.zero);
+            movement.Rotate(Vector3.zero);
+        }
+
         if(other.gameObject.tag == "Projectile"){
+            //Physics.IgnoreCollision(other.gameObject.GetComponent<Collider>(), GetComponent<Collider>());
             Destroy(other.gameObject);
             healthTransform.sizeDelta = new Vector2(currHealthWidth - damageValue, healthTransform.sizeDelta.y);
             currHealthWidth -= damageValue;
