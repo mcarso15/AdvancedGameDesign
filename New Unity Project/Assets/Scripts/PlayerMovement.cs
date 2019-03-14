@@ -55,7 +55,9 @@ public class PlayerMovement : MonoBehaviour
 
     void DoMovement(){
         //canMove check keeps collisions from sending the player off into space
-        canMove = true;
+        if(velocity != Vector3.zero){
+            canMove = true;
+        }
         if(canMove){
             rigidBody.MovePosition(transform.position + velocity * Time.fixedDeltaTime);
         }
@@ -83,6 +85,5 @@ public class PlayerMovement : MonoBehaviour
     //Public until I find a better way to do this.
     public void DoJump(){
         rigidBody.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
-        
     }
 }

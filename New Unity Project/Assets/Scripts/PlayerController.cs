@@ -91,6 +91,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if(other.gameObject.tag == "Projectile"){
+            //Physics.IgnoreCollision(other.gameObject.GetComponent<Collider>(), GetComponent<Collider>());
             Destroy(other.gameObject);
             healthTransform.sizeDelta = new Vector2(currHealthWidth - damageValue, healthTransform.sizeDelta.y);
             currHealthWidth -= damageValue;
