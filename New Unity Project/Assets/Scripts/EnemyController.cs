@@ -5,22 +5,35 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     private Rigidbody rb;
-    // Start is called before the first frame update
+    
+    private Collider enemyCollider;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        enemyCollider = GetComponent<Collider>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        TestFight();
     }
 
     void OnCollisionEnter(Collision other){
         if(other.gameObject.tag == "Plunger"){
             Destroy(other.gameObject);
-            rb.useGravity = true;
+            if(rb.useGravity == false){
+                rb.useGravity = true;
+            }
+            
+            if(rb.velocity.y == 0){
+                rb.isKinematic = true;
+            }
         }
+        
+    }
+
+    void TestFight(){
+
     }
 }

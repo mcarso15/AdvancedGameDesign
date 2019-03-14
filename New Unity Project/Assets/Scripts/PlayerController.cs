@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     private float damageValue;
     private Camera cam;
 
-    private bool grounded;
+    private bool grounded = true;
 
     GameObject healthBar;
 
