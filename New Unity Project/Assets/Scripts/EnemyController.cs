@@ -75,7 +75,7 @@ public class EnemyController : MonoBehaviour
 
 
     void FollowPlayer(){
-        if(!inAWall && _tryAgainDist <= 0){
+        if(!inAWall && _tryAgainDist <= 0 || !inAWall && _fireDelay == 1){
             //Make sure enemy is 'looking' at the player so they can aim
             playerDirection = player.transform.position - this.transform.position + Vector3.up;
             this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(playerDirection), 1);

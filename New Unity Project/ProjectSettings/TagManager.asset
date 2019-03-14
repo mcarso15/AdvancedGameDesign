@@ -11,6 +11,7 @@ TagManager:
   - Plunger
   - Wall
   - Enemy
+  - HealingGround
   layers:
   - Default
   - TransparentFX

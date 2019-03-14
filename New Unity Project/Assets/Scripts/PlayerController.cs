@@ -12,15 +12,18 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float damageMultiplier = 0.1f;
 
-    
+    [SerializeField] private float healTimer = 50f;
 
     
     private float healthWidth;
     private float currHealthWidth;
     private float damageValue;
+
+    private float _healTimer;
     private Camera cam;
 
     private bool grounded = true;
+    private bool healingGround = false;
 
     GameObject healthBar;
 
@@ -43,6 +46,7 @@ public class PlayerController : MonoBehaviour
     void Update(){
         DoMovement();
         
+        CheckHealing();
 
         TestHealth();
     }
@@ -96,11 +100,29 @@ public class PlayerController : MonoBehaviour
             healthTransform.sizeDelta = new Vector2(currHealthWidth - damageValue, healthTransform.sizeDelta.y);
             currHealthWidth -= damageValue;
         }
+
+        if(other.gameObject.tag == "HealingGround"){
+            //grounded = true;
+            healingGround = true;
+        }
     }
 
     void OnCollisionExit(Collision other){
         if(other.gameObject.tag == "Ground"){
             grounded = false;
+        }
+
+        if(other.gameObject.tag == "HealingGround"){
+            //grounded = false;
+            healingGround = false;
+        }
+    }
+
+    void CheckHealing(){
+        _healTimer = healTimer;
+        if(currHealthWidth < healthWidth && healingGround){                        
+            healthTransform.sizeDelta = new Vector2(currHealthWidth + damageValue, healthTransform.sizeDelta.y);
+            currHealthWidth += damageValue;
         }
     }
 
