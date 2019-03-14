@@ -17,8 +17,9 @@ public class PlayerMovement : MonoBehaviour
     private float jumpHeight = 0f;
     private float fallMultiplier = 0f;
 
-    float minView = 270f;
-    float maxView = 90f;
+
+    //float minView = 270f;
+    //float maxView = 90f;
 
     void Start(){
         rigidBody = GetComponent<Rigidbody>();
@@ -51,13 +52,12 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void DoMovement(){
-        if(velocity != Vector3.zero){
-            rigidBody.MovePosition(transform.position + velocity * Time.fixedDeltaTime);
-        }
+        rigidBody.MovePosition(transform.position + velocity * Time.fixedDeltaTime);        
     }
 
     void DoRotate(){
         rigidBody.MoveRotation(transform.rotation * Quaternion.Euler(rotation));
+        
         if(cam != null){
             cam.transform.Rotate(-camRotation); //Inverted camera control if this is positive
         }
