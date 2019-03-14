@@ -1258,12 +1258,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pooPrefab: {fileID: 4273836599485022857, guid: cf4af25de6ce9ac43986a42bd9bb7ce6,
     type: 3}
-  minDistance: 1
-  maxDistance: 3
+  minDistance: 3
+  maxDistance: 7
   moveSpeed: 1
   maxFollowFrom: 10
   turnAngle: 15
   tryAgainDist: 50
+  fireDelay: 200
+  _fireDelay: 0
 --- !u!1 &1914688336
 GameObject:
   m_ObjectHideFlags: 0
