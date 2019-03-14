@@ -12,40 +12,39 @@ public class EnemyController : MonoBehaviour
 
     [SerializeField] private float turnAngle = 15f;
     [SerializeField] private float tryAgainDist = 5f;
+    [SerializeField] private float fireDelay = 200f;
     private Rigidbody rb;
     
     private Collider enemyCollider;
 
     private GameObject player;
-    private float distanceToPlayer;
 
     private float _tryAgainDist = 0f;
 
     private Vector3 playerDirection;
     private Vector3 _rotation;
 
-    private Vector3 oldPosition;
-
-    private RaycastHit hit;
-
     private bool inAWall;
 
     private bool dead;
 
-    private bool hitDetect;
+    private float _fireDelay = 0f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         enemyCollider = GetComponent<Collider>();
         player = GameObject.FindWithTag("Player");
         dead = false;
-
+        _fireDelay = fireDelay;
         OrientEnemies();
     }
 
     void FixedUpdate(){
+        if(!dead){
         FollowPlayer();
         TestFight();
+        }
     }
 
     void OnCollisionEnter(Collision other){
@@ -108,7 +107,10 @@ public class EnemyController : MonoBehaviour
         }
 
         if(Vector3.Distance(transform.position, player.transform.position) <= maxDistance){
-            print("boo!");
+            _fireDelay--;
+            if(_fireDelay == 0){
+                FireProjectile();
+            }
         }
         
     }
@@ -123,6 +125,7 @@ public class EnemyController : MonoBehaviour
         Physics.IgnoreCollision(pooProjectile.GetComponent<Collider>(), GetComponent<Collider>());
         float force = pooProjectile.GetComponent<EnemyProjectileController>().speed;
         pooProjectile.GetComponent<Rigidbody>().AddForce(pooProjectile.transform.forward * force, ForceMode.Impulse);
+        _fireDelay = fireDelay;
     }
 
     void OrientEnemies(){
