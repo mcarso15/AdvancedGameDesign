@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8895483448335188108}
   - component: {fileID: 228956509490363134}
   - component: {fileID: 1938664747267538976}
+  - component: {fileID: 2668778569555113860}
   m_Layer: 0
   m_Name: FloatingText
   m_TagString: Untagged
@@ -28,7 +29,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2695997847411188770}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -6.71}
+  m_LocalPosition: {x: 0, y: 0, z: -7.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -36,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13.03, y: 2.8}
+  m_AnchoredPosition: {x: -14.3, y: 2.33}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &7809674696180955160
@@ -112,9 +113,12 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Mr. Plumber, welcome. Thank you so much for coming on such short notice.
+  m_text: "Mr. Plumber, welcome. Thank you so much for coming on such short notice.
     All of our toilets have clogged and the students are OUT RAGGED!! Please... We
-    need your help in fixing our toilets.
+    need your help in fixing our toilets.\n\nBefore you go in to help us, there are
+    a few things you need to know;\n\t1) Use WASD on the keyboard to move.\n\t2) Space
+    bar to jump.\n\t3) To look around, just simply move the mouse.\n\t4) To shoot,
+    left click on the mouse. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
@@ -142,14 +146,14 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 3
-  m_fontSizeBase: 3
+  m_fontSize: 2
+  m_fontSizeBase: 2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 257
+  m_textAlignment: 264
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -180,15 +184,15 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0.7311268, y: 0.5458698, z: 11.402387, w: 1.4096911}
+  m_margin: {x: 7.081255, y: 0.90555, z: 7.010785, w: 0.99149346}
   m_textInfo:
     textComponent: {fileID: 1938664747267538976}
-    characterCount: 189
+    characterCount: 409
     spriteCount: 0
-    spaceCount: 33
-    wordCount: 34
+    spaceCount: 85
+    wordCount: 80
     linkCount: 0
-    lineCount: 4
+    lineCount: 9
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0
@@ -209,3 +213,17 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   m_maskType: 0
+--- !u!114 &2668778569555113860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2695997847411188770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6fb8621b7f6f4026a03e1e6305ac534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  showOnDistance: 3
