@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
 
     private bool canMove = true;
 
+    private PlayerController pc;
+
 
     //float minView = 270f;
     //float maxView = 90f;
@@ -75,8 +77,8 @@ public class PlayerMovement : MonoBehaviour
         rigidBody.freezeRotation = true;
     }
 
-    void DoFall(){
-        if(rigidBody.velocity.y < 1){
+    public void DoFall(){
+        if(rigidBody.velocity.y < 1 || !pc.grounded){
             rigidBody.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.fixedDeltaTime;
         }
     }
