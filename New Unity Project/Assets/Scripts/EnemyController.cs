@@ -113,7 +113,6 @@ public class EnemyController : MonoBehaviour
         if(Vector3.Distance(transform.position, player.transform.position) <= maxDistance){
             _fireDelay--;
             if(_fireDelay == 0){
-                print("Attack!");
                 FireProjectile();
             }
         }
@@ -121,18 +120,18 @@ public class EnemyController : MonoBehaviour
     }
     void TestFight(){
         if(Input.GetKeyDown(KeyCode.Q)){
-            print("Firing");
             FireProjectile();
         }
     }
 
     void FireProjectile(){
-        GameObject pooProjectile = (GameObject)Instantiate(pooPrefab, transform.position, transform.rotation);
-        
-        Physics.IgnoreCollision(pooProjectile.GetComponent<Collider>(), GetComponent<Collider>());
-        float force = pooProjectile.GetComponent<EnemyProjectileController>().speed;
-        pooProjectile.GetComponent<Rigidbody>().AddForce(pooProjectile.transform.forward * force, ForceMode.Impulse);
-        _fireDelay = fireDelay;
+        if(dead == false){
+            GameObject pooProjectile = (GameObject)Instantiate(pooPrefab, transform.position, transform.rotation);
+            Physics.IgnoreCollision(pooProjectile.GetComponent<Collider>(), GetComponent<Collider>());
+            float force = pooProjectile.GetComponent<EnemyProjectileController>().speed;
+            pooProjectile.GetComponent<Rigidbody>().AddForce(pooProjectile.transform.forward * force, ForceMode.Impulse);
+            _fireDelay = fireDelay;
+        }
     }
 
     void OrientEnemies(){

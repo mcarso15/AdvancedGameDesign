@@ -78,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void DoFall(){
-        if(rigidBody.velocity.y < 1 || !pc.grounded){
+        if(rigidBody.velocity.y < 1){
             rigidBody.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.fixedDeltaTime;
         }
     }
