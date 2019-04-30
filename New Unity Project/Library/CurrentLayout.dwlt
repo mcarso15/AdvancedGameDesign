@@ -15,9 +15,9 @@ MonoBehaviour:
   m_PixelRect:
     serializedVersion: 2
     x: 0
-    y: 44
-    width: 1680
-    height: 933
+    y: 43
+    width: 1920
+    height: 1007
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
@@ -291,9 +291,9 @@ MonoBehaviour:
     height: 883
   m_MinSize: {x: 277, y: 74}
   m_MaxSize: {x: 4002, y: 4024}
-  m_ActualView: {fileID: 17}
+  m_ActualView: {fileID: 15}
   m_Panes:
-  - {fileID: 17}
+  - {fileID: 15}
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &13
@@ -500,7 +500,7 @@ MonoBehaviour:
         m_UserData: -180082
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 10}
       m_SearchString: 
@@ -554,7 +554,8 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/school/scenes
   m_LastFoldersGridSize: 16
-  m_LastProjectPath: /Users/bradley/Desktop/Game/AdvancedGameDesign/New Unity Project
+  m_LastProjectPath: C:\Users\Matt\Documents\AdvGameDesign\Janitor Run\AdvancedGameDesign\New
+    Unity Project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
