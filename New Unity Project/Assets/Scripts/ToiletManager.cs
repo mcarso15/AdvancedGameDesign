@@ -12,9 +12,12 @@ public class ToiletManager : MonoBehaviour
 
     private Renderer rend;
 
+    
+    WorldManager wm;
     // Start is called before the first frame update
     void Start()
     {
+        
         //toilet is red... FF0000
         //Fetch the Renderer from the GameObject
         rend = GetComponent<Renderer>();
@@ -24,6 +27,8 @@ public class ToiletManager : MonoBehaviour
 
         rend.material.shader = Shader.Find("Specular");
         rend.material.SetColor("_SpecColor", Color.red);
+
+        wm = GetComponentInParent<WorldManager>();
     }
 
     // Update is called once per frame
@@ -36,7 +41,8 @@ public class ToiletManager : MonoBehaviour
     {
         if (other.gameObject.tag == "Plunger")
         {
-            print("Plunged");
+            Destroy(other.gameObject);
+            wm.Plunge();
             //Set the main Color of the Material to white
             rend.material.shader = Shader.Find("_Color");
             rend.material.SetColor("_Color", Color.white);

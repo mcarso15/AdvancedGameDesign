@@ -986,6 +986,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: WC
       objectReference: {fileID: 0}
+    - target: {fileID: 4823359628638115686, guid: b3d1f2f8c7dac4c40a4ac4d3a3ae70bf,
+        type: 3}
+      propertyPath: m_TagString
+      value: HealingGround
+      objectReference: {fileID: 0}
+    - target: {fileID: 4823359629009059590, guid: b3d1f2f8c7dac4c40a4ac4d3a3ae70bf,
+        type: 3}
+      propertyPath: m_TagString
+      value: HealingGround
+      objectReference: {fileID: 0}
+    - target: {fileID: 4823359627958395347, guid: b3d1f2f8c7dac4c40a4ac4d3a3ae70bf,
+        type: 3}
+      propertyPath: m_TagString
+      value: HealingGround
+      objectReference: {fileID: 0}
+    - target: {fileID: 4823359627251044398, guid: b3d1f2f8c7dac4c40a4ac4d3a3ae70bf,
+        type: 3}
+      propertyPath: m_TagString
+      value: HealingGround
+      objectReference: {fileID: 0}
+    - target: {fileID: 4823359628442257379, guid: b3d1f2f8c7dac4c40a4ac4d3a3ae70bf,
+        type: 3}
+      propertyPath: m_TagString
+      value: HealingGround
+      objectReference: {fileID: 0}
+    - target: {fileID: 4823359628404706757, guid: b3d1f2f8c7dac4c40a4ac4d3a3ae70bf,
+        type: 3}
+      propertyPath: m_TagString
+      value: HealingGround
+      objectReference: {fileID: 0}
+    - target: {fileID: 4823359627209011484, guid: b3d1f2f8c7dac4c40a4ac4d3a3ae70bf,
+        type: 3}
+      propertyPath: m_TagString
+      value: HealingGround
+      objectReference: {fileID: 0}
     - target: {fileID: 4825048175655765500, guid: b3d1f2f8c7dac4c40a4ac4d3a3ae70bf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1041,16 +1076,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4823359627209011484, guid: b3d1f2f8c7dac4c40a4ac4d3a3ae70bf,
-        type: 3}
-      propertyPath: m_TagString
-      value: HealingGround
-      objectReference: {fileID: 0}
-    - target: {fileID: 4823359627251044398, guid: b3d1f2f8c7dac4c40a4ac4d3a3ae70bf,
-        type: 3}
-      propertyPath: m_TagString
-      value: HealingGround
-      objectReference: {fileID: 0}
     - target: {fileID: 4823359627729297401, guid: b3d1f2f8c7dac4c40a4ac4d3a3ae70bf,
         type: 3}
       propertyPath: m_TagString
@@ -1061,27 +1086,7 @@ PrefabInstance:
       propertyPath: m_TagString
       value: HealingGround
       objectReference: {fileID: 0}
-    - target: {fileID: 4823359627958395347, guid: b3d1f2f8c7dac4c40a4ac4d3a3ae70bf,
-        type: 3}
-      propertyPath: m_TagString
-      value: HealingGround
-      objectReference: {fileID: 0}
-    - target: {fileID: 4823359628404706757, guid: b3d1f2f8c7dac4c40a4ac4d3a3ae70bf,
-        type: 3}
-      propertyPath: m_TagString
-      value: HealingGround
-      objectReference: {fileID: 0}
-    - target: {fileID: 4823359628442257379, guid: b3d1f2f8c7dac4c40a4ac4d3a3ae70bf,
-        type: 3}
-      propertyPath: m_TagString
-      value: HealingGround
-      objectReference: {fileID: 0}
     - target: {fileID: 4823359628685803494, guid: b3d1f2f8c7dac4c40a4ac4d3a3ae70bf,
-        type: 3}
-      propertyPath: m_TagString
-      value: HealingGround
-      objectReference: {fileID: 0}
-    - target: {fileID: 4823359628638115686, guid: b3d1f2f8c7dac4c40a4ac4d3a3ae70bf,
         type: 3}
       propertyPath: m_TagString
       value: HealingGround
@@ -1092,11 +1097,6 @@ PrefabInstance:
       value: HealingGround
       objectReference: {fileID: 0}
     - target: {fileID: 4823359629005655334, guid: b3d1f2f8c7dac4c40a4ac4d3a3ae70bf,
-        type: 3}
-      propertyPath: m_TagString
-      value: HealingGround
-      objectReference: {fileID: 0}
-    - target: {fileID: 4823359629009059590, guid: b3d1f2f8c7dac4c40a4ac4d3a3ae70bf,
         type: 3}
       propertyPath: m_TagString
       value: HealingGround
@@ -1951,6 +1951,28 @@ Transform:
   m_Father: {fileID: 1873922497}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1457312260 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4825048175655765501, guid: b3d1f2f8c7dac4c40a4ac4d3a3ae70bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 889755931}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1457312261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457312260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddbc14287325c0b4d8e8d30f3ef074d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene0: IntroLevel
+  scene1: level 01
+  scene2: level 02
+  scene3: level 03
 --- !u!1 &1486870601 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4823359629005655334, guid: b3d1f2f8c7dac4c40a4ac4d3a3ae70bf,
@@ -2786,7 +2808,7 @@ PrefabInstance:
     - target: {fileID: 1938664747267538976, guid: ff9884654c8dd48c8b0c43f46dd76fba,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1938664747267538976, guid: ff9884654c8dd48c8b0c43f46dd76fba,
         type: 3}
@@ -2801,32 +2823,32 @@ PrefabInstance:
     - target: {fileID: 1938664747267538976, guid: ff9884654c8dd48c8b0c43f46dd76fba,
         type: 3}
       propertyPath: m_firstOverflowCharacterIndex
-      value: -1
+      value: 407
       objectReference: {fileID: 0}
     - target: {fileID: 1938664747267538976, guid: ff9884654c8dd48c8b0c43f46dd76fba,
         type: 3}
       propertyPath: m_text
       value: "Mr. Plumber, welcome. Thank you so much for coming on such short notice.
-        All of our toilets have clogged and the students are OUT RAGGED!! Please...
+        All of our toilets have clogged and the students are OUT RAGED!! Please...
         We need your help in fixing our toilets.\n\nBefore you go in to help us, there
-        are a few things you need to know;\n\t1) Use WASD on the keyboard to move.\n\t2)
-        Space bar to jump.\n\t3) To look around, just simply move the mouse.\n\t4)
-        To shoot, left click on the mouse. \n\n----FOLLOW GREEN TILE-----"
+        are a few things you need to know;\n\n1) Use WASD on the keyboard to move.\n2)
+        Space bar to jump.\n3) To look around, just simply move the mouse.\n4) To
+        shoot, left click on the mouse. \n\n----FOLLOW THE GREEN TILES-----"
       objectReference: {fileID: 0}
     - target: {fileID: 1938664747267538976, guid: ff9884654c8dd48c8b0c43f46dd76fba,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 437
+      value: 438
       objectReference: {fileID: 0}
     - target: {fileID: 1938664747267538976, guid: ff9884654c8dd48c8b0c43f46dd76fba,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 89
+      value: 87
       objectReference: {fileID: 0}
     - target: {fileID: 1938664747267538976, guid: ff9884654c8dd48c8b0c43f46dd76fba,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 83
+      value: 84
       objectReference: {fileID: 0}
     - target: {fileID: 2668778569555113860, guid: ff9884654c8dd48c8b0c43f46dd76fba,
         type: 3}
@@ -3017,7 +3039,7 @@ PrefabInstance:
     - target: {fileID: 1938664747267538976, guid: ff9884654c8dd48c8b0c43f46dd76fba,
         type: 3}
       propertyPath: m_text
-      value: 'These are the children, they are outragged and are rebelling against
+      value: 'These are the children, they are outraged and are rebelling against
         everyone! Try to avoid them as much as possible, they will try to throw feces
         at you!!
 
@@ -3027,7 +3049,7 @@ PrefabInstance:
     - target: {fileID: 1938664747267538976, guid: ff9884654c8dd48c8b0c43f46dd76fba,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 230
+      value: 229
       objectReference: {fileID: 0}
     - target: {fileID: 1938664747267538976, guid: ff9884654c8dd48c8b0c43f46dd76fba,
         type: 3}
