@@ -17,10 +17,13 @@ public class ToiletManager : MonoBehaviour
     {
         //toilet is red... FF0000
         //Fetch the Renderer from the GameObject
-
+        rend = GetComponent<Renderer>();
         //Set the main Color of the Material to green
         rend.material.shader = Shader.Find("_Color");
-        rend.material.SetColor("_Color", Color.green);
+        rend.material.SetColor("_Color", Color.red);
+
+        rend.material.shader = Shader.Find("Specular");
+        rend.material.SetColor("_SpecColor", Color.red);
     }
 
     // Update is called once per frame
@@ -31,11 +34,14 @@ public class ToiletManager : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Projectile")
+        if (other.gameObject.tag == "Plunger")
         {
-            //Set the main Color of the Material to red
+            print("Plunged");
+            //Set the main Color of the Material to white
             rend.material.shader = Shader.Find("_Color");
-            rend.material.SetColor("_Color", Color.red);
+            rend.material.SetColor("_Color", Color.white);
+            rend.material.shader = Shader.Find("Specular");
+            rend.material.SetColor("_SpecColor", Color.white);
         }
     }
 }

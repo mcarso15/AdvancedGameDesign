@@ -8,7 +8,6 @@ public class EnemyProjectileController : MonoBehaviour
     Rigidbody poo;
     void Start(){
         poo = GetComponent<Rigidbody>();
-        print("I got made!");
     }
     void OnCollisionEnter(Collision other){
         Destroy(this.gameObject);
