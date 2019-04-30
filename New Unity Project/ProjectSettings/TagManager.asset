@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Ground
   - HealthBar
+  - Weapon
+  - Projectile
+  - Plunger
+  - Wall
+  - Enemy
+  - HealingGround
   layers:
   - Default
   - TransparentFX
