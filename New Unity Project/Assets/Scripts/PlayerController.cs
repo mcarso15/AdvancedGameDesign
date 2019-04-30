@@ -102,6 +102,11 @@ public class PlayerController : MonoBehaviour
             movement.Rotate(Vector3.zero);
         }
 
+        if(other.gameObject.tag == "Wall"){
+            movement.Move(Vector3.zero);
+            movement.Rotate(Vector3.zero);
+        }
+
         if(other.gameObject.tag == "Projectile"){
             //Physics.IgnoreCollision(other.gameObject.GetComponent<Collider>(), GetComponent<Collider>());
             Destroy(other.gameObject);
