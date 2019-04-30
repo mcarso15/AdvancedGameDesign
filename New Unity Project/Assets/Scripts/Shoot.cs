@@ -11,8 +11,9 @@ public class Shoot : MonoBehaviour
     }
     void DoShoot(){
         if(Input.GetButtonDown("Fire1")){
-            GameObject plungerProjectile = (GameObject)Instantiate(plungerPrefab, transform.position, transform.parent.rotation);
-            float force = plungerProjectile.GetComponent<PlungerController>().speed;
+            print("click");
+            GameObject plungerProjectile = (GameObject)Instantiate(plungerPrefab, transform.position, transform.parent.rotation * Quaternion.Euler(0,180f,0));
+            float force = -1 * plungerProjectile.GetComponent<PlungerController>().speed;
             plungerProjectile.GetComponent<Rigidbody>().AddForce(plungerProjectile.transform.forward * force, ForceMode.Impulse);
         }
     }

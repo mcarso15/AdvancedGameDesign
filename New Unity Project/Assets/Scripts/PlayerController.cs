@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     private float _healTimer;
     private Camera cam;
 
-    private bool grounded = true;
+    public bool grounded = true;
     private bool healingGround = false;
 
     GameObject healthBar;
@@ -39,8 +39,11 @@ public class PlayerController : MonoBehaviour
         healthTransform = healthBar.GetComponent<RectTransform>();
         healthWidth = healthTransform.rect.width;
         currHealthWidth = healthWidth;
-
         damageValue = (healthWidth * damageMultiplier);
+
+        //Fixes some weirdness where the player was unaffected by gravity until they jumped for the first time
+        movement.FallMulti(fallMultiplier);
+        movement.DoFall();
     }
 
     void Update(){
@@ -83,10 +86,20 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
-    void OnCollisionEnter(Collision other){
+    void OnCollisionStay(Collision other){
         if(other.gameObject.tag == "Ground"){
             grounded = true;
+        }
+    }
+    void OnCollisionEnter(Collision other){
+
+        if(other.gameObject.tag == "Ground"){
+            grounded = true;
+        }
+        
+        if(other.gameObject.tag == "Wall"){
+            movement.Move(Vector3.zero);
+            movement.Rotate(Vector3.zero);
         }
 
         if(other.gameObject.tag == "Wall"){
