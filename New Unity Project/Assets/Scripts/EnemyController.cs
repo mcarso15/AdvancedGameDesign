@@ -7,7 +7,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private GameObject pooPrefab;
     [SerializeField] private float minDistance = 1f;
     [SerializeField] private float maxDistance = 3f;
-    [SerializeField] private float moveSpeed = 1f;
+    [SerializeField] public float moveSpeed = 1f;
     [SerializeField] private float maxFollowFrom = 10f;
 
     [SerializeField] private float turnAngle = 15f;
@@ -29,6 +29,8 @@ public class EnemyController : MonoBehaviour
     private bool dead;
 
     private float _fireDelay = 0f;
+
+    public bool moving = false;
 
     void Start()
     {
@@ -75,6 +77,7 @@ public class EnemyController : MonoBehaviour
 
 
     void FollowPlayer(){
+        
         if(!inAWall && _tryAgainDist <= 0 || !inAWall && _fireDelay == 1){
             //Make sure enemy is 'looking' at the player so they can aim
             playerDirection = player.transform.position - this.transform.position + Vector3.up;
@@ -82,6 +85,7 @@ public class EnemyController : MonoBehaviour
         }
         //Move towards the player
         if(Vector3.Distance(transform.position, player.transform.position) >= minDistance && Vector3.Distance(transform.position, player.transform.position) < maxFollowFrom){
+            moving = true;
             //Check if I'm crashing into a wall, then determine which way to turn
             if(inAWall){
                 _tryAgainDist = tryAgainDist;
@@ -109,19 +113,22 @@ public class EnemyController : MonoBehaviour
         if(Vector3.Distance(transform.position, player.transform.position) <= maxDistance){
             _fireDelay--;
             if(_fireDelay == 0){
+                print("Attack!");
                 FireProjectile();
             }
         }
-        
+        moving = false;
     }
     void TestFight(){
         if(Input.GetKeyDown(KeyCode.Q)){
+            print("Firing");
             FireProjectile();
         }
     }
 
     void FireProjectile(){
         GameObject pooProjectile = (GameObject)Instantiate(pooPrefab, transform.position, transform.rotation);
+        
         Physics.IgnoreCollision(pooProjectile.GetComponent<Collider>(), GetComponent<Collider>());
         float force = pooProjectile.GetComponent<EnemyProjectileController>().speed;
         pooProjectile.GetComponent<Rigidbody>().AddForce(pooProjectile.transform.forward * force, ForceMode.Impulse);

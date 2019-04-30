@@ -978,6 +978,7 @@ GameObject:
   - component: {fileID: 136606663363984694}
   - component: {fileID: 95665039525092722}
   - component: {fileID: 114018963531894940}
+  - component: {fileID: 928378920040600432}
   m_Layer: 0
   m_Name: MaleFreeSimpleMovement1
   m_TagString: Untagged
@@ -1068,6 +1069,28 @@ MonoBehaviour:
   m_animator: {fileID: 95665039525092722}
   m_rigidBody: {fileID: 54084939265967506}
   m_controlMode: 0
+--- !u!114 &928378920040600432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824340380413090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b5309c9e904ec84cbd280ce83045c97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooPrefab: {fileID: 4273836599485022857, guid: cf4af25de6ce9ac43986a42bd9bb7ce6,
+    type: 3}
+  minDistance: 3
+  maxDistance: 7
+  moveSpeed: 3
+  maxFollowFrom: 10
+  turnAngle: 15
+  tryAgainDist: 5
+  fireDelay: 200
+  moving: 0
 --- !u!1 &1826566120413068
 GameObject:
   m_ObjectHideFlags: 0

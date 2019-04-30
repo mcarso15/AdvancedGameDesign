@@ -52,7 +52,6 @@ public class PlayerController : MonoBehaviour
         CheckHealing();
 
         TestHealth();
-        print(grounded);
     }
 
     void DoMovement(){

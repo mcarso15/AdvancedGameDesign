@@ -31,9 +31,19 @@ public class SimpleCharacterControl : MonoBehaviour {
     private float m_jumpTimeStamp = 0;
     private float m_minJumpInterval = 0.25f;
 
-    private bool m_isGrounded;
+    private bool m_isGrounded = true;
     private List<Collider> m_collisions = new List<Collider>();
 
+    //Added by me
+    private GameObject player;
+    private EnemyController controller;
+
+    //Added by me
+    void Start(){
+        player = GameObject.FindWithTag("Player");
+        controller = this.GetComponent<EnemyController>();
+    }
+/*
     private void OnCollisionEnter(Collision collision)
     {
         ContactPoint[] contactPoints = collision.contacts;
@@ -86,10 +96,14 @@ public class SimpleCharacterControl : MonoBehaviour {
         }
         if (m_collisions.Count == 0) { m_isGrounded = false; }
     }
-
+*/
 	void Update () {
         m_animator.SetBool("Grounded", m_isGrounded);
-
+        if(controller.moving){
+            Walking();
+        }
+    }
+/*      
         switch(m_controlMode)
         {
             case ControlMode.Direct:
@@ -107,7 +121,28 @@ public class SimpleCharacterControl : MonoBehaviour {
 
         m_wasGrounded = m_isGrounded;
     }
+*/
+    //Added by me
+    private void Walking()
+    {
+        Vector3 direction = player.transform.position - this.transform.position + Vector3.up;
 
+        float directionLength = direction.magnitude;
+        direction.y = 0;
+        direction = direction.normalized * directionLength;
+
+        if(direction != Vector3.zero)
+        {
+            m_currentDirection = Vector3.Slerp(m_currentDirection, direction, Time.deltaTime * m_interpolation);
+
+            transform.rotation = Quaternion.LookRotation(m_currentDirection);
+            transform.position += m_currentDirection * m_moveSpeed * Time.deltaTime;
+
+            m_animator.SetFloat("MoveSpeed", 1);
+        }
+
+    }
+    /*
     private void TankUpdate()
     {
         float v = Input.GetAxis("Vertical");
@@ -188,5 +223,5 @@ public class SimpleCharacterControl : MonoBehaviour {
         {
             m_animator.SetTrigger("Jump");
         }
-    }
+    } */
 }
